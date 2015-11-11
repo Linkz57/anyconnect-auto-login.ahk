@@ -1,8 +1,9 @@
 ;; anyconnect-auto-login.ahk
-;; v1
+;; v1.1
 ;; Automatically log into Cisco AnyConnect
 ;; Written by Tyler Francis for JelecUSA on 2015-10-19
 
+start:
 winwait,Cisco AnyConnect Secure Mobility Client,Security Warning: Untrusted VPN Server Certificate!
 sleep 500
 winactivate
@@ -15,11 +16,12 @@ sleep 500
 send password
 send {enter}
 
-winwait,AnyConnect Downloader,10
-{
-	winactivate
-	send {tab}
-	sleep 500
-	send {enter}
-}
-exitapp
+; winwait,AnyConnect Downloader,10
+; {
+	; winactivate
+	; send {tab}
+	; sleep 500
+	; send {enter}
+; }
+
+goto,start
